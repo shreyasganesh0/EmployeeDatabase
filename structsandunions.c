@@ -29,4 +29,15 @@ int main() {
     }
     printf("%f\n", employees[10].salary);
     printf("Size of union: %zu bytes\n", sizeof(unions));
+
+    int n = 4;
+
+    struct employee_t *employeesdynamic = malloc(sizeof(struct employee_t)*n);
+    if (employeesdynamic == NULL){
+        printf("Allocator failed\n");
+        return -1;
+    }
+
+    free(employeesdynamic);
+    employeesdynamic = NULL;
 }

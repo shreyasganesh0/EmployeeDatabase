@@ -12,10 +12,15 @@ struct employee_t{
     bool ismanager;
 };
 
+union my_union{
+    int a;
+    float c[10];
+};
+
 int main() {
 
     struct employee_t employees[MAX_EMPLOYEES];
-
+    union my_union unions;
     int i= 0;
 
     for (i=0; i<MAX_EMPLOYEES; i+=1){
@@ -23,4 +28,5 @@ int main() {
         employees[i].ismanager = false;
     }
     printf("%f\n", employees[10].salary);
+    printf("Size of union: %zu bytes\n", sizeof(unions));
 }
